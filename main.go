@@ -7,5 +7,5 @@ type Film struct {
 }
 
 func main() {
-	fmt.Println()
+	fmt.Println("film")
 }
