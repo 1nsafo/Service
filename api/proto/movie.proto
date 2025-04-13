@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package movie;
+
+option go_package = "./proto";
+
+message Film{
+    int ID = 1;
+    string Title = 2;
+    string ReleaseYear = 3;
+    string Director = 4;
+    string Genre = 5;
+    float64 Rating = 6;
+}
+
+message FilmRequest{
+    int32 ID = 1;
+}
+
+message FilmResponse{
+    string message = 1;
+}
+
+service MovieService{
+    rpc CreateFilm(Film) returns FilmResponse;
+    rpc GetFilm(FilmRequest) returns Film;
+    rpc UpdateFilm(Film) returns FilmResponse;
+    rpc DeleteFilm(FilmRequest) returns FilmResponse; 
+}
